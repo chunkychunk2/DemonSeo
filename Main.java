@@ -28,7 +28,8 @@ public class Main {
         reader.close();
         
         GetLinks gl = new GetLinks();
-        gl.linksParser(site, max, result);
+        gl.linksParser(site, max);
+        gl.saveResult(result);
 
 
 
