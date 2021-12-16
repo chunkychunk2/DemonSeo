@@ -16,13 +16,19 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        
         System.out.println("Сайт");
         String site = reader.readLine();
+        
         System.out.println("Уровень вложения:");
         int max = Integer.parseInt(reader.readLine());
+        
+        System.out.println("Укажите путь, куда сохранить результат:");
+        String result = reader.readLine();
         reader.close();
+        
         GetLinks gl = new GetLinks();
-        gl.linksParser(site, max);
+        gl.linksParser(site, max, result);
 
 
 
