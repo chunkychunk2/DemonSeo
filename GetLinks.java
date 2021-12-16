@@ -20,7 +20,7 @@ public class GetLinks {
         return !lines.contains(link);
     }
 
-    public void  linksParser(String site, int max) throws IOException {
+    public void  linksParser(String site, int max, String result) throws IOException {
         Document doc = Jsoup.connect(site).get();
         Elements links = doc.select("a[href]");
         for (Element link : links) {
@@ -53,7 +53,7 @@ public class GetLinks {
         Set<String> set = new HashSet<>(lines);
         lines.clear();
         lines.addAll(set);
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("/Users/user/Desktop/DemonSeo/src/main/java/result"))){
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(result))){ // "/Users/user/Desktop/DemonSeo/src/main/java/result"
             for (String l:lines) writer.write(l + "\n");} catch (IOException e) {
             e.printStackTrace();
         }
