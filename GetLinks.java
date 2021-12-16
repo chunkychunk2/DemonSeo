@@ -50,6 +50,8 @@ public class GetLinks {
             }
             lines.addAll(lines2);
         }
+    }
+    public void saveResult(String result){
         Set<String> set = new HashSet<>(lines);
         lines.clear();
         lines.addAll(set);
